@@ -3,7 +3,7 @@ import api from "../../apiService"
 
 const userAction={}
 
-userAction.getCurrentUser=({})=>async(dispatch)=>{
+userAction.getCurrentUser=()=>async(dispatch)=>{
     try {
         dispatch({type: types.GET_SINGLE_USER_REQUEST})
         const res = await api.get("/users/me", {})

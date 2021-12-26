@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage';
 import LoginPage from './pages/LoginPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
-import Navbar from './components/Navbar';
+import PublicNavbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
@@ -13,7 +13,7 @@ function App() {
   
   return (
     <Router>
-      <Navbar/>
+      <PublicNavbar/>
       <Routes>
         <Route exact path="/" element={<Homepage/>}/>
         <Route exact path="/login" element={<LoginPage/>}/>
