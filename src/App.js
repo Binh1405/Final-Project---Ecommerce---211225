@@ -16,8 +16,8 @@ function App() {
       <PublicNavbar/>
       <Routes>
         <Route exact path="/" element={<Homepage/>}/>
-        <Route exact path="/login" element={<LoginPage/>}/>
-        <Route exact path="/register" element={<RegisterPage/>}/>
+        <Route exact path="/users/login" element={<LoginPage/>}/>
+        <Route exact path="/users/register" element={<RegisterPage/>}/>
         <Route exact path="/profile" element={<ProfilePage/>}/>
         <Route exact path="/product/:id" element={<ProductDetailPage/>}/>
         <Route element={<NotFoundPage/>}/>

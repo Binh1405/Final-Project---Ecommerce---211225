@@ -6,14 +6,15 @@ import "./Style/LoginPage.css"
 
 const LoginPage = () => {
 
-  const [dataForm, setDataForm] = useState({
-    email:"",
-    password:""
-  })
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-  const {email, password} = dataForm
-  const handleOnChange=(e)=>{
-    setDataForm({...dataForm, [e.target.name]: e.target.value})
+  const handleEmail=(e)=>{
+    setEmail(e.target.value)
+  }
+
+  const handlePassword=(e)=>{
+    setPassword(e.target.value)
   }
 
   const dispatch = useDispatch()
@@ -22,19 +23,19 @@ const LoginPage = () => {
     e.preventDefault()
     dispatch(authAction.login({email, password}))
   }
-    
+  
   return (
 
 <div className="login-form">
 <Form onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" onChange={handleOnChange}/>
+    <Form.Control type="email" placeholder="Enter email" onChange={handleEmail}/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" onChange={handleOnChange}/>
+    <Form.Control type="password" placeholder="Password" onChange={handlePassword}/>
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
